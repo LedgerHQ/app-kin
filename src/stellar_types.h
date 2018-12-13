@@ -59,7 +59,7 @@
 #define AMOUNT_PRECISION 7
 
 /* Native currency code */
-const string NATIVE_ASSET_CODE = "KIN"
+#define NATIVE_ASSET_CODE "KIN"
 
 // ------------------------------------------------------------------------- //
 //                       TRANSACTION PARSING CONSTANTS                       //

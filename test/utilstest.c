@@ -19,7 +19,7 @@
 #include "stellar_api.h"
 
 void test_print_amount(uint64_t amount, char *expected) {
-    char *asset = NATIVE_ASSET_NAME;
+    char *asset = NATIVE_ASSET_CODE;
     char printed[24];
     print_amount(amount, asset, printed);
 
