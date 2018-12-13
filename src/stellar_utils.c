@@ -231,7 +231,7 @@ void print_amount(uint64_t amount, char *asset, char *out) {
         } else {
             buffer[i] = '0';
         }
-        if (i == 6) { // stroops to xlm: 1 xlm = 10000000 stroops
+        if (i == AMOUNT_PRECISION - 1) { // stroops to native: 1 native = 10 ** AMOUNT_PRECISION stroops
             i += 1;
             buffer[i] = '.';
         }
@@ -359,6 +359,6 @@ void print_native_asset_code(uint8_t network, char *out) {
     if (network == NETWORK_TYPE_UNKNOWN) {
         strcpy(out, "native");
     } else {
-        strcpy(out, "XLM");
+        strcpy(out, NATIVE_ASSET_CODE);
     }
 }

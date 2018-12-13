@@ -1,8 +1,8 @@
-# Stellar app for the Ledger Nano S and Ledger Blue
+# KIN app for the Ledger Nano S and Ledger Blue
 
 ## Introduction
 
-This is the wallet app for the [Ledger Nano S](https://www.ledgerwallet.com/products/ledger-nano-s) and [Ledger Blue](https://www.ledgerwallet.com/products/ledger-blue) that makes it possible to store [Stellar](https://www.stellar.org/)-based assets on those devices and generally sign any transaction for the Stellar network.
+This is the wallet app for the [Ledger Nano S](https://www.ledgerwallet.com/products/ledger-nano-s) and [Ledger Blue](https://www.ledgerwallet.com/products/ledger-blue) that makes it possible to store [KIN](https://kinecosystem.org/) coins on those devices and sign payment transactions for the KIN network.
 
 A companion [Javascript library](https://github.com/LedgerHQ/ledgerjs) is available to communicate with this app. To learn how to use this library and generate a browserified version of it you can take look at the [demo project](https://github.com/lenondupe/ledgerjs-stellar).
 

@@ -5,5 +5,6 @@ obj
 src/glyphs.c
 src/glyphs.h
 .idea
+.vscode
 nano-sdk
 blue-sdk

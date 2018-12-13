@@ -1,6 +1,7 @@
 #*******************************************************************************
-#   Ledger Stellar App
+#   Ledger Kin App
 #   (c) 2017-2018 Ledger
+#   (c) 2018 Kin Foundation
 #
 #  Licensed under the Apache License, Version 2.0 (the "License");
 #  you may not use this file except in compliance with the License.
@@ -20,10 +21,11 @@ $(error Environment variable BOLOS_SDK is not set)
 endif
 include $(BOLOS_SDK)/Makefile.defines
 
-APPNAME = Stellar
-APP_LOAD_PARAMS=--appFlags 0x40 --path "44'/148'" --curve ed25519 $(COMMON_LOAD_PARAMS)
+APPNAME = Kin
+BIP44_KIN_COIN_INDEX = 1481
+APP_LOAD_PARAMS=--appFlags 0x40 --path "44'/$(BIP44_KIN_COIN_INDEX)'" --curve ed25519 $(COMMON_LOAD_PARAMS)
 
-APPVERSION_M=3
+APPVERSION_M=0
 APPVERSION_N=0
 APPVERSION_P=1
 APPVERSION=$(APPVERSION_M).$(APPVERSION_N).$(APPVERSION_P)
