@@ -1,6 +1,7 @@
 /*******************************************************************************
- *   Ledger Stellar App
+ *   Ledger Kin App
  *   (c) 2017-2018 Ledger
+ *   (c) 2018-2019 Kin Foundation
  *
  *  Licensed under the Apache License, Version 2.0 (the "License");
  *  you may not use this file except in compliance with the License.
@@ -68,12 +69,12 @@ const bagl_element_t ui_idle_blue[] = {
       BAGL_FONT_SYMBOLS_0 | BAGL_FONT_ALIGNMENT_CENTER | BAGL_FONT_ALIGNMENT_MIDDLE, 0},
      BAGL_FONT_SYMBOLS_0_DASHBOARD, 0, COLOR_APP, 0xFFFFFF, io_seproxyhal_touch_exit, NULL, NULL},
 
-    // BADGE_STELLAR.GIF
+    // BADGE_KIN.GIF
     {{BAGL_ICON, 0x00, 135, 178, 50, 50, 0, 0, BAGL_FILL, 0, COLOR_BG_1, 0, 0},
-     &C_badge_stellar, 0, 0, 0, NULL, NULL, NULL},
+     &C_badge_kin, 0, 0, 0, NULL, NULL, NULL},
 
     {{BAGL_LABELINE, 0x00, 0, 270, 320, 30, 0, 0, BAGL_FILL, 0x000000, COLOR_BG_1, BAGL_FONT_OPEN_SANS_LIGHT_16_22PX | BAGL_FONT_ALIGNMENT_CENTER, 0},
-     "Open Stellar wallet", 0, 0, 0, NULL, NULL, NULL},
+     "Open Kin wallet", 0, 0, 0, NULL, NULL, NULL},
     {{BAGL_LABELINE, 0x00, 0, 308, 320, 30, 0, 0, BAGL_FILL, 0x000000, COLOR_BG_1, BAGL_FONT_OPEN_SANS_REGULAR_10_13PX | BAGL_FONT_ALIGNMENT_CENTER, 0},
      "Connect the Ledger Blue and open your", 0, 0, 0, NULL, NULL, NULL},
     {{BAGL_LABELINE, 0x00, 0, 331, 320, 30, 0, 0, BAGL_FILL, 0x000000, COLOR_BG_1, BAGL_FONT_OPEN_SANS_REGULAR_10_13PX | BAGL_FONT_ALIGNMENT_CENTER, 0},
