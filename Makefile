@@ -22,7 +22,7 @@ endif
 include $(BOLOS_SDK)/Makefile.defines
 
 APPNAME = Kin
-BIP44_KIN_COIN_INDEX = 1481
+BIP44_KIN_COIN_INDEX = 2017
 APP_LOAD_PARAMS=--appFlags 0x40 --path "44'/$(BIP44_KIN_COIN_INDEX)'" --curve ed25519 $(COMMON_LOAD_PARAMS)
 
 APPVERSION_M=0
@@ -34,7 +34,7 @@ APPVERSION=$(APPVERSION_M).$(APPVERSION_N).$(APPVERSION_P)
 ifeq ($(TARGET_NAME),TARGET_BLUE)
 ICONNAME=blue_icon.gif
 else
-ICONNAME=icon.gif
+ICONNAME=icon_kin.gif
 endif
 
 ################
@@ -51,23 +51,37 @@ DEFINES   += HAVE_BAGL HAVE_SPRINTF
 #DEFINES   += HAVE_PRINTF PRINTF=screen_printf
 DEFINES   += PRINTF\(...\)=
 DEFINES   += HAVE_IO_USB HAVE_L4_USBLIB IO_USB_MAX_ENDPOINTS=6 IO_HID_EP_LENGTH=64 HAVE_USB_APDU
-DEFINES   +=  LEDGER_MAJOR_VERSION=$(APPVERSION_M) LEDGER_MINOR_VERSION=$(APPVERSION_N) LEDGER_PATCH_VERSION=$(APPVERSION_P)
+DEFINES   += LEDGER_MAJOR_VERSION=$(APPVERSION_M) LEDGER_MINOR_VERSION=$(APPVERSION_N) LEDGER_PATCH_VERSION=$(APPVERSION_P)
 
 # U2F
 DEFINES   += HAVE_IO_U2F
-DEFINES   += U2F_PROXY_MAGIC=\"l0v\"
+DEFINES   += U2F_PROXY_MAGIC=\"w0w\"
 DEFINES   += USB_SEGMENT_SIZE=64
 DEFINES   += BLE_SEGMENT_SIZE=32 #max MTU, min 20
 DEFINES   += U2F_REQUEST_TIMEOUT=28000 # 28 seconds
+
 DEFINES   += UNUSED\(x\)=\(void\)x
 DEFINES   += APPVERSION=\"$(APPVERSION)\"
 
+#DEFINES   += CX_COMPLIANCE_141
 
 ##############
 #  Compiler  #
 ##############
-#GCCPATH   := $(BOLOS_ENV)/gcc-arm-none-eabi-5_3-2016q1/bin/
-#CLANGPATH := $(BOLOS_ENV)/clang-arm-fropi/bin/
+ifneq ($(BOLOS_ENV),)
+$(info BOLOS_ENV=$(BOLOS_ENV))
+CLANGPATH := $(BOLOS_ENV)/clang-arm-fropi/bin/
+GCCPATH := $(BOLOS_ENV)/gcc-arm-none-eabi-5_3-2016q1/bin/
+else
+$(info BOLOS_ENV is not set: falling back to CLANGPATH and GCCPATH)
+endif
+ifeq ($(CLANGPATH),)
+$(info CLANGPATH is not set: clang will be used from PATH)
+endif
+ifeq ($(GCCPATH),)
+$(info GCCPATH is not set: arm-none-eabi-* will be used from PATH)
+endif
+
 CC       := $(CLANGPATH)clang 
 
 #CFLAGS   += -O0
@@ -102,4 +116,4 @@ dep/%.d: %.c Makefile.genericwallet
 
 
 listvariants:
-	@echo VARIANTS stellar
+	@echo VARIANTS kin

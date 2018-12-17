@@ -53,10 +53,10 @@
 /* Although SEP-0005 only allows 3 bip32 path elements we support more */
 #define MAX_BIP32_LEN 10
 
-/* Max amount is max int64 scaled down: "922337203685.4775807" */
+/* Max amount is max int64 scaled down: "92233720368547.75807" */
 #define AMOUNT_MAX_SIZE 21
 /* Decimal points in it */
-#define AMOUNT_PRECISION 7
+#define AMOUNT_PRECISION 5
 
 /* Native currency code */
 #define NATIVE_ASSET_CODE "KIN"
