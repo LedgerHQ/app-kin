@@ -224,7 +224,7 @@ void print_amount(uint64_t amount, char *asset, char *out) {
     int i, j;
 
     memset(buffer, 0, AMOUNT_MAX_SIZE);
-    for (i = 0; dVal > 0 || i < 9; i++) {
+    for (i = 0; dVal > 0 || i < (AMOUNT_PRECISION + 2); i++) { // at least 0.xxx
         if (dVal > 0) {
             buffer[i] = (dVal % 10) + '0';
             dVal /= 10;
