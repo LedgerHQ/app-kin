@@ -1,6 +1,8 @@
 bin
+build
 debug
 dep
+dist
 obj
 src/glyphs.c
 src/glyphs.h
