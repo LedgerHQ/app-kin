@@ -115,4 +115,4 @@ dep/%.d: %.c Makefile.genericwallet
 
 
 listvariants:
-	@echo VARIANTS kin
+	@echo VARIANTS COIN kin
