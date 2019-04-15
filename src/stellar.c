@@ -39,7 +39,6 @@ uint8_t read_bip32(uint8_t *dataBuffer, uint32_t *bip32) {
 
 void derive_private_key(cx_ecfp_private_key_t *privateKey, uint32_t *bip32, uint8_t bip32Len) {
     uint8_t privateKeyData[32];
-
 #ifdef TARGET_BLUE
     os_perso_derive_node_bip32(CX_CURVE_Ed25519, bip32, bip32Len, privateKeyData, NULL);
 #else
@@ -89,9 +88,15 @@ void handle_get_public_key(uint8_t p1, uint8_t p2, uint8_t *dataBuffer, uint16_t
     uint16_t msgLength;
     uint8_t msg[32];
     if (ctx.req.pk.returnSignature) {
+        uint8_t i;
         msgLength = dataLength;
         if (msgLength > 32) {
             THROW(0x6a80);
+        }
+        for (i=0; i<msgLength; i++) {
+            if ((dataBuffer[i] < 0x20) || (dataBuffer[i] > 0x7e)) {
+                THROW(0x6a80);
+            }
         }
         os_memmove(msg, dataBuffer, msgLength);
     }
