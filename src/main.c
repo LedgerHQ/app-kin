@@ -245,9 +245,9 @@ unsigned char io_event(unsigned char channel) {
                 u2f_send_keep_alive();
             }
         }
-
+#endif
         UX_TICKER_EVENT(G_io_seproxyhal_spi_buffer, {
-#ifndef TARGET_NANOX // S only
+#ifdef TARGET_NANOS // S only
             if (UX_ALLOWED) {
                 if (ctx.reqType == CONFIRM_TRANSACTION) {
                     ui_approve_tx_next_screen(&ctx.req.tx);
@@ -256,7 +256,6 @@ unsigned char io_event(unsigned char channel) {
             }
 #endif
         });
-#endif
         break;
     }
 
