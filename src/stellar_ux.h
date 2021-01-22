@@ -18,6 +18,7 @@
 #ifndef STELLAR_UX_COMMON_H
 #define STELLAR_UX_COMMON_H
 
+#include "ux.h"
 #include "os_io_seproxyhal.h"
 #include "stellar_types.h"
 
